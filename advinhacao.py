@@ -1,4 +1,6 @@
-numero_secreto=32
+import random as rd
+
+numero_secreto= rd.randint(1,100)
 
 def numero_usuario():
     while True:
