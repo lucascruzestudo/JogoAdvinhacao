@@ -2,15 +2,15 @@ import random as rd
 
 def numero_usuario():
     while True:
-        entrada = input("Digite um numero (1-50): ")
+        entrada = input("Digite um número entre 1 e 50: ")
         try:
             entrada = int(entrada)
-            if (entrada >= 1 and entrada <= 50):
+            if 1 <= entrada <= 50:
                 return entrada
             else:
-                print("O número secreto está entre 1 e 50!\n")
-        except:
-             print("Valor informado invalido!\n")
+                print("O número deve estar entre 1 e 50!\n")
+        except ValueError:
+            print("Valor informado inválido! Digite um número.\n")
 
 def verificar_entrada(entrada, numero_secreto):
     acerto = (entrada == numero_secreto)
