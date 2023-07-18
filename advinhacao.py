@@ -13,19 +13,15 @@ def verificar_entrada(entrada, numero_secreto):
     acerto = (entrada == numero_secreto)
 
     if acerto:
-
         return True, None
 
     else:
-
         maior = (numero_secreto > entrada)
 
         if maior:
             return False, "MAIOR"
         else:
             return False, "MENOR"
-
-
 
 print("*********************************")
 print("Bem vindo ao jogo de advinhação!!")
