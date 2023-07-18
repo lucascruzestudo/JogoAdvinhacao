@@ -53,6 +53,7 @@ print("*********************************\n")
 
 tentativas = definir_dificuldade()
 numero_secreto = rd.randint(1,50)
+pontos = 1000
 
 while tentativas > 0:
     print(f"Você possui {tentativas} tentativas.")
@@ -63,8 +64,12 @@ while tentativas > 0:
         break
     else:
         print(f"Você errou, o número secreto é {auxiliar} do que o número informado.\n")
+        pontos_perdidos = abs(numero_secreto - entrada)
+        pontos -= pontos_perdidos
     tentativas -= 1
     if (tentativas == 0):
         print(f"Acabaram suas tentativas, o número secreto era {numero_secreto}.")
+        pontos = 0
 
 print("Fim de jogo!")
+print(f"Sua pontuação: {pontos}")
