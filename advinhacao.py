@@ -1,4 +1,23 @@
 import random as rd
+from time import sleep
+
+def definir_dificuldade():
+    dificuldades = [["Fácil",10],["Difícil",5],["Insano",3]]
+    while True:
+        print("Selecione uma dificuldade")
+        print("(0) Fácil, 10 tentativas\n(1) Difícil, 5 tentativas\n(2) Insano, 3 tentativas\n")
+        escolhida = input("Dificuldade escolhida entre 0 e 2: ")
+        try:
+            escolhida = int(escolhida)
+            if 0 <= escolhida <= 2:
+                print(f"\nDificuldade {dificuldades[escolhida][0]} selecionada!")
+                print("Iniciando partida...\n")
+                sleep(2)
+                return dificuldades[escolhida][1]
+            else:
+                print("As dificuldades vão de 0 a 2!\n")
+        except ValueError:
+            print("Valor informado inválido! Digite um número entre 0 e 2!\n")
 
 def numero_usuario():
     while True:
@@ -32,7 +51,7 @@ print("*********************************")
 print("Bem vindo ao jogo de advinhação!!")
 print("*********************************\n")
 
-tentativas = 5
+tentativas = definir_dificuldade()
 numero_secreto = rd.randint(1,50)
 
 while tentativas > 0:
