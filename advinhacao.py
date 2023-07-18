@@ -53,7 +53,7 @@ print("*********************************\n")
 
 tentativas = definir_dificuldade()
 numero_secreto = rd.randint(1,50)
-pontos = maximo_pontos = 100
+pontos = maximo_pontos = 200
 
 while tentativas > 0:
     print(f"Você possui {tentativas} tentativas.")
